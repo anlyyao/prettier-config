@@ -12,7 +12,7 @@
     "access": "public"
   },
   "scripts": {
-    "publish": "git push --tag && git push && npm publish"
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
