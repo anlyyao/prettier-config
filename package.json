@@ -12,7 +12,12 @@
     "access": "public"
   },
   "scripts": {
-    "publish": "npm publish"
+    "lint": "eslint --ext js,.ts,.tsx ./ --max-warnings 0",
+    "lint:fix": "eslint --ext js,.ts,.tsx ./ --max-warnings 0 --fix",
+    "commit": "git-cz",
+    "release": "standard-version",
+    "publish": "npm publish",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -22,5 +27,30 @@
     "name": "anlyyao",
     "email": "anly_yaw@163.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
+    "prettier": "^2.6.2",
+    "standard-version": "^9.3.2"
+  },
+  "peerDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue}": [
+      "prettier --write",
+      "npm run lint:fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
