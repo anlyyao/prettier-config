@@ -1,2 +1,8 @@
+## OS
+.DS_Store
+.npmrc
+
 # Ignored suffix
 *ignore
+
+.husky
