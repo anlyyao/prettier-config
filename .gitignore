@@ -1,11 +1,10 @@
-# Logs
+## OS
+.DS_Store
+.idea
 *.log
-
-# Git
-.git
 
 # Lock
 yarn.lock
 
-# node_modules
-node_modules/
+## Local
+node_modules
